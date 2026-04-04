@@ -28,7 +28,7 @@ data AttributeVal = attrId(str name)
 
 data Expression = forall(str var, str space, Expression body)
   | exists(str var, str space, Expression body)
-  | binOp(Expression lhs, BinOp op, Expression rhs)
+  | logicalExpr(Term lhs, BinOp op, Expression rhs)
   | termExpr(Term t)
   ;
 
