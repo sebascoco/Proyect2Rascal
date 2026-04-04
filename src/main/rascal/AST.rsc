@@ -6,7 +6,8 @@ data Module = \module(str name, list[Import] imports, list[BodyDecl] body) ;
 
 data Import = \import(str moduleName) ;
 
-data BodyDecl = space(str name, list[str] subSpaces, list[BodyDecl] innerBody)
+data BodyDecl
+  = space(str name, list[str] subSpaces)
   | operator(str name, CurryingNotation currying, list[Attribute] attributes)
   | variables(list[VarDef] defs)
   | rule(AplicarOperator lhs, AplicarOperator rhs)

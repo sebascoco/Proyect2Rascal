@@ -1,6 +1,6 @@
 module Syntax
 
-keyword Keywords //Para highlighting y validación de palabras reservadas
+keyword Keywords //Para highlighting dfel punto 1
   = "defmodule" | "using"     | "defspace"    | "defoperator"
   | "defvar"    | "defrule"   | "defexpression"| "end"
   | "forall"    | "exists"    | "in"           | "and"
@@ -12,14 +12,13 @@ keyword Keywords //Para highlighting y validación de palabras reservadas
 // 1. Extensiones para manejo de espacios y tipos estándar
 extend lang::std::Layout;
 
-// 2. Definiciones Léxicas (Terminales básicos)  REVISAR
-//Cambios definir aparte Digit
+// 2. Definiciones Léxicas (Terminales básicos)  REVISAR CAMBIOS CON EL WORD
 lexical Letter = [a-z];
 lexical Digit = [0-9];
 lexical Char = Letter | Digit | "-";
 lexical Identifier = Letter Char* !>> (Letter | Digit | "-") \ Keywords;    
 lexical IntLit = Digit+;
-lexical FloatLit = Digit+ ("." Digit+)?; //Hay Float?
+lexical FloatLit = Digit+ "." Digit+ ; //Hay Float?
 lexical BoolLit  = "True" | "False" | "None";
 lexical StrLit = "\"" (Char | " ")+ "\"";
 lexical NullVal  = "ø";
@@ -54,7 +53,7 @@ syntax ExpressionDef = "defexpression" Expression Attributes? "end" ;
 
 syntax Expression = QuantifierExpression | LogicalExpression ;
 
-syntax QuantifierExpression = ("∀" | "∃" ) Identifier "in" Identifier "." Expression ; // PReguntar si esta bien en simbolos o poner forall y exists
+syntax QuantifierExpression = ("forall" | "exists" ) Identifier "in" Identifier "." Expression ; // PReguntar si esta bien en simbolos o poner forall y exists
 
 syntax LogicalExpression = Term (("and" | "or" | "≡" | "=\>" | "=" | "\<" | "\>" | "\<=" | "\>=" | "\<\>") Term) * ; 
 
