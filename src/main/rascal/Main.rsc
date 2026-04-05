@@ -52,6 +52,8 @@ void main(list[str] args) {
 
 // Alternative main that uses the example file
 void main() {
+// TODO
+//Cambiar por ruta absoluta del archivo propio
   loc exampleFile = |file:///Users/julianpintocajiao/Downloads/Uniandes/lym/Proyect2Rascal/src/main/rascal/Prueba.alu|;
   main([exampleFile.path]);
 }
