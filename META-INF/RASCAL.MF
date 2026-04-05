@@ -1,4 +1,3 @@
-Manifest-Version: 0.0.1
-Project-Name: Proyect2Rascal
+Project-Name: proyect2rascal
 Source: src/main/rascal
 Require-Libraries: |lib://dsl-project|

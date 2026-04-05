@@ -53,10 +53,10 @@ data Term = parenExpr(Expression e)
 data AplicarOperator = applyOp(str operator, list[Term] args) ;
 
 data Literal = intLit(int val)
-  | floatLit(real val)
+  | floatLit(real valReal)
   | boolTrue()
   | boolFalse()
   | boolNone()
-  | strLit(str val)
+  | strLit(str valString)
   | nullLit()
   ;

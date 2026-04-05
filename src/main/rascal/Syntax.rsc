@@ -9,7 +9,7 @@ keyword Keywords //Para highlighting dfel punto 1
   ;
 
 
-// 1. Extensiones para manejo de espacios y tipos estándar
+// 1. Para espacios automaticos
 extend lang::std::Layout;
 
 // 2. Definiciones Léxicas (Terminales básicos)  REVISAR CAMBIOS CON EL WORD
@@ -18,7 +18,6 @@ lexical Digit = [0-9];
 lexical Char = Letter | Digit | "-";
 lexical Identifier = Letter Char* !>> (Letter | Digit | "-") \ Keywords;    
 lexical IntLit = Digit+;
-lexical FloatLit = Digit+ "." Digit+ ; //Hay Float?
 lexical BoolLit  = "True" | "False" | "None";
 lexical StrLit = "\"" (Char | " ")+ "\"";
 lexical NullVal  = "ø";
@@ -67,6 +66,6 @@ syntax Attributes = "[" DentroAtribute+ "]" ; // Revisar si es opcional o no ten
 
 syntax DentroAtribute = Identifier (":" (Identifier | Literal))? ;
 
-syntax Literal = IntLit | FloatLit | BoolLit | StrLit | NullVal ;
+syntax Literal = IntLit | BoolLit | StrLit | NullVal ;
 
 
