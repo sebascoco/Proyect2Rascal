@@ -27,26 +27,16 @@ public Syntax tree2ast(Tree tree) {
 }
 
 // Main entry point for parsing and processing a file
-void main(list[str] args) {
-  if (size(args) == 0) {
-    println("Usage: rascal Main.rsc -- <file>");
-    println("Or call: main([\"path/to/file.alu\"])");
-    return;
-  }
+void main() {
+  loc exampleFile = |file:///C:/Users/sebas/OneDrive/Documentos/6%20Semestre/LIM/Proy2/proyect2rascal/src/main/rascal/Set.alu|;
   
-  loc file = toLocation(args[0]);
-  println("Parsing: <file>");
-  
+  println("Parsing: <exampleFile>");
   try {
-    Tree parseTree = loadVeriLangFile(file);
-    println("Parse succeeded!");
-    
-    Syntax ast = tree2ast(parseTree);
-    println("AST conversion succeeded!");
-    println("Module: <ast>");
-    
+    Tree parseTree = parse(#start[Syntax], exampleFile, allowAmbiguity=true);
+    println("✓ Parse succeeded!");
+    println("Tree: <parseTree>");
   } catch e: {
-    println("ERROR: <e>");
+    println("✗ ERROR: <e>");
   }
 }
 

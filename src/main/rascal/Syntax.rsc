@@ -20,8 +20,7 @@ lexical Identifier = Letter Char* !>> (Letter | Digit | "-") \ Keywords;
 lexical IntLit = Digit+;
 lexical BoolLit  = "True" | "False" | "None";
 lexical StrLit = "\"" (Char | " ")+ "\"";
-lexical NullVal  = "ø";
-
+lexical NullVal = "ø" | "∅";
 
 
 // 3. Símbolo Inicial
