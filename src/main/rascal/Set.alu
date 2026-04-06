@@ -1,0 +1,11 @@
+defmodule set
+  using list
+  defspace set < superset end
+  defoperator union : set -> set -> set [associative id:∅] end
+  defoperator isin : element -> set -> bool end
+  defoperator implication : bool -> bool -> bool end
+  defoperator negation : bool -> bool end
+  defvar p:bool q:bool end
+  defrule (implication p q) -> (disjunction (negation p) q) end
+  defexpression (forall x in element . (forall s in set . (forall u in set . (isin x (union s u))))) end
+end

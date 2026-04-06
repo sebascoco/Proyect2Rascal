@@ -54,9 +54,10 @@ void main(list[str] args) {
 void main() {
 // TODO
 //Cambiar por ruta absoluta del archivo propio
-  loc exampleFile = |file:///Users/julianpintocajiao/Downloads/Uniandes/lym/Proyect2Rascal/src/main/rascal/Prueba.alu|;
+  loc exampleFile = |file:///C:/Users/sebas/OneDrive/Documentos/6%20Semestre/LIM/Proy2/proyect2rascal/src/main/rascal/Set.alu|;
   main([exampleFile.path]);
 }
+
 
 // Debug function to test parsing simple strings
 void testParse(str input) {
@@ -72,7 +73,7 @@ void testParse(str input) {
 
 // Test with a minimal valid module
 void testMinimal() {
-  testParse("defmodule Test end");
+  testParse("defmodule test end");
 }
 
 // Utility function to convert string location to loc

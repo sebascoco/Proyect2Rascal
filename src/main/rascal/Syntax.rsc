@@ -42,7 +42,7 @@ syntax Operators = "defoperator" Identifier ":" CurryingNotation Attributes? "en
 
 syntax CurryingNotation = Identifier "-\>" Identifier ("-\>" Identifier)* ;
 
-syntax Variables = "defvar" VarDef(" " VarDef)* "end" ;
+syntax Variables = "defvar" VarDef+ "end" ;
 
 syntax VarDef = Identifier ":" Identifier ;
  
